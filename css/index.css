@@ -1,0 +1,40 @@
+.welcome
+{
+	background-color: #05668d;;
+}
+.welcome>h1,.welcome>h4,p
+{
+	color: white;
+}
+.welcome>img
+{
+	float: right;
+}
+section
+{
+	background-color: #EBF2FA;
+}
+section img
+{
+	border-radius: 150px;
+}
+section :first-child
+{
+	margin-left: 5%;
+}
+section :last-child
+{
+	float: right;
+	margin-right: 5%;
+}
+section :nth-child(2)
+{
+	margin-left: 20%;
+}
+.btn-success
+{
+	width: 250px;
+	height: 50px;
+	margin-top: 25%;
+	font-size: 20px;
+}
