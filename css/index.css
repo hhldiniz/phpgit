@@ -37,4 +37,5 @@ section :nth-child(2)
 	height: 50px;
 	margin-top: 25%;
 	font-size: 20px;
+	border: none;
 }
