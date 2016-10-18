@@ -1,12 +1,12 @@
-.welcome
+.page-header
 {
 	background-color: #05668d;;
 }
-.welcome>h1,.welcome>h4,p
+.page-header>h1,.page-header>h4,p
 {
 	color: white;
 }
-.welcome>img
+.page-header>img
 {
 	float: right;
 }
@@ -17,19 +17,6 @@ section
 section img
 {
 	border-radius: 150px;
-}
-section :first-child
-{
-	margin-left: 5%;
-}
-section :last-child
-{
-	float: right;
-	margin-right: 5%;
-}
-section :nth-child(2)
-{
-	margin-left: 20%;
 }
 .btn-success
 {
