@@ -8,7 +8,7 @@ $(document).ready(function(){
 				$(".table").append("<tr></tr>");
 				$("tr").last().append("<td><img src='"+element['avatar_url']+"'></td>");
 				$("tr").last().append("<td>"+element['login']+"</td>");
-				$("tr").last().append("<td>"+element['repos_url']+"</td>");
+				$("tr").last().append("<td><a href='"+element['repos_url']+"'>"+element['repos_url']+"</a></td>");
 			});
 			
 		},
