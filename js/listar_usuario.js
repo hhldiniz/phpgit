@@ -3,12 +3,12 @@ $(document).ready(function(){
 		url: 'php/listar_usuario.php',
 		success:function(result)
 		{
-			$("#result").append(result);
+			$("#result").html(result);
 			console.log(result);
 		},
 		error:function(error)
 		{
-			$("#result").append(error);
+			$("#result").html(error);
 			console.log(error);
 		}
 	});

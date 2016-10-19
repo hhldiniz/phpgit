@@ -1,25 +1,14 @@
 <?php
-require_once 'vendor/autoload.php';
-use Milo\Github\Http;
-
-$method = Http\Request::GET;
-$url = 'https://api.github.com/users';
-$headers = [
-    'Content-Type' => 'application/json',
-];
-$content = json_encode($_SERVER);
-
-$request = new Http\Request($method, $url, $headers, $content);
-
-$request->getMethod();   # POST
-$request->getUrl();      # http://example.com/sniff
-$request->hasHeader('CONTENT-type');                      # TRUE
-$request->getHeader('Accept-Encoding', 'default/value');  # default/value
-$request->getHeaders();  # ['content-type' => 'application/json']
-$request->getContent();  # ...
-
-$request->addHeader('Content-Type', 'text/html');  # does nothing
-$request->setHeader('Content-Type', 'text/html');  # changes the header
-
-
+	$curl = curl_init();
+	curl_setopt_array($curl, array(
+	    CURLOPT_RETURNTRANSFER => 1,
+	    CURLOPT_URL => 'https://api.github.com/users',
+	    CURLOPT_USERAGENT =>'Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20100101 Firefox/10.0'
+	));
+	$result = curl_exec($curl);
+	if(!$result){
+	    die('Error: "' . curl_error($curl) . '" - Code: ' . curl_errno($curl));
+	}
+	curl_close($curl);
+	echo $result;
 ?>
