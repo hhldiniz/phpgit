@@ -15,4 +15,7 @@ $(document).ready(function(){
 			console.log(error);
 		}
 	});
+	$(".list-group-item").click(function(){
+		
+	});
 });
