@@ -3,8 +3,11 @@ $(document).ready(function(){
 		url: 'php/listar_usuario.php',
 		success:function(result)
 		{
-			$("#result").html(result);
-			console.log(result);
+			result=JSON.parse(result);
+			result.forEach(function(element){
+				$(".list-group").append("<li class='list-group-item'>"+element['login']+"</li>");
+			});
+			
 		},
 		error:function(error)
 		{
