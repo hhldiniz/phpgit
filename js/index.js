@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$(".btn-success").click(function(){
-		location.href="login.html";
+		location.href="listar_usuario.html";
 	});
 $(window).resize(function(){
 	
