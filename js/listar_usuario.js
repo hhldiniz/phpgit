@@ -5,17 +5,31 @@ $(document).ready(function(){
 		{
 			result=JSON.parse(result);
 			result.forEach(function(element){
-				$(".list-group").append("<li class='list-group-item'>"+element['login']+"</li>");
+				$(".table").append("<tr></tr>");
+				$("tr").last().append("<td><img src='"+element['avatar_url']+"'></td>");
+				$("tr").last().append("<td>"+element['login']+"</td>");
+				$("tr").last().append("<td>"+element['repos_url']+"</td>");
 			});
 			
 		},
 		error:function(error)
 		{
-			$("#result").html(error);
-			console.log(error);
+			alert(error);
 		}
 	});
 	$(".list-group-item").click(function(){
-		
+		$.ajax({
+			url:'php/detalhes.php',
+			success: function(result)
+			{
+				result=JSON.parse(result);
+				$(this).append(result);
+				console.log(result);
+			},
+			error: function(error)
+			{
+				alert(error);
+			}
+		});
 	});
 });
