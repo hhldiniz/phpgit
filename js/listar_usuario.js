@@ -17,9 +17,9 @@ $(document).ready(function(){
 			alert(error);
 		}
 	});
-	$(".list-group-item").click(function(){
+	$(".td").click(function(){
 		$.ajax({
-			url:'php/detalhes.php',
+			url:'php/detalhes.php?usuario='+$(this).text(),
 			success: function(result)
 			{
 				result=JSON.parse(result);
